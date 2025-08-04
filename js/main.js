@@ -84,6 +84,7 @@ function openPopup(targetPopup) {
     setTimeout(function () {
         popup.firstElementChild.classList.add("show");
     }, 100)
+    document.body.style.overflow = "hidden"
 };
 
 popup.forEach(function (pop) {
@@ -96,6 +97,7 @@ popup.forEach(function (pop) {
     pop.firstElementChild.addEventListener("click", function (event) {
         event.stopPropagation()
     })
+    document.body.style.overflow = "initial"
 });
 
 
