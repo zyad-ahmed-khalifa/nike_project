@@ -60,11 +60,11 @@
 
 @media (max-width:750px) {
     section#landing .slider .slides .slide img:nth-child(1) {
-        transform: translate(-70px, 0px) scale(1.0);
+        transform: translate(-70px, 10px) scale(1.0);
     }
 
     section#landing .slider .slides .slide img:nth-child(2) {
-        transform: translate(20px, -60px) scale(1.4) rotate(-25deg);
+        transform: translate(20px, -40px) scale(1.0) rotate(-25deg);
     }
 }
 

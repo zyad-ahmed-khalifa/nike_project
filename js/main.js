@@ -93,11 +93,11 @@ popup.forEach(function (pop) {
         setTimeout(function () {
             pop.classList.remove("active");
         }, 700)
+        document.body.style.overflow = "initial"
     })
     pop.firstElementChild.addEventListener("click", function (event) {
         event.stopPropagation()
     })
-    document.body.style.overflow = "initial"
 });
 
 

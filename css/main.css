@@ -202,7 +202,6 @@ section#landing .slider button.left {
 
 /* #endregion banner */
 
-
 /* #region banner */
 #banner .row div img {
     transform: scale(1);
@@ -306,6 +305,21 @@ section#features .row .card {
     overflow: hidden;
     transform-origin: 300px;
 }
+
+section#features .row .card:after {
+    content: "double tab to save";
+    position: absolute;
+    top: 10px;
+    left: -200px;
+    padding: 2px 3px;
+    background-color: rgb(var(--main-color), 0.5);
+    border-radius: 0 5px 5px 0;
+    transition: 1s;
+    color: white;
+}
+section#features .row .card:hover::after{
+    left: 0;
+} 
 
 section#features .row .card>svg {
     opacity: 0;
