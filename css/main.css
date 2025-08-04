@@ -1,0 +1,599 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: 251, 37, 39;
+    /* --main-color: 15, 121, 214; */
+    /* --main-color: 237, 152, 33; */
+    --grey-color: #777777;
+    --darkblue-color: #2c2c54;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+    overflow-x: hidden;
+    background-color: rgb(var(--main-color), 0.1);
+}
+
+
+/* #region nav */
+nav {
+    /* background-color: rgba(var(--main-color), 0.1); */
+    z-index: 10;
+    box-shadow: 0px 0px 10px 2px rgb(var(--main-color), 0.5)
+}
+
+nav a.navbar-brand img {
+    width: 82px;
+}
+
+nav ul.navbar-nav:nth-child(1) li a {
+    position: relative;
+    transition: .5s;
+}
+
+nav ul.navbar-nav:nth-child(1) li a:after,
+nav ul.navbar-nav:nth-child(1) li a:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 10px;
+    opacity: 0;
+    transition: .5s;
+}
+
+nav ul.navbar-nav:nth-child(1) li a:after {
+    top: 0;
+    left: -20px;
+    border-top: 1px solid rgb(var(--main-color));
+    border-left: 1px solid rgb(var(--main-color));
+}
+
+nav ul.navbar-nav:nth-child(1) li a:before {
+    bottom: 0;
+    right: -20px;
+    border-bottom: 1px solid rgb(var(--main-color));
+    border-right: 1px solid rgb(var(--main-color));
+}
+
+nav ul.navbar-nav:nth-child(1) li:hover a,
+nav ul.navbar-nav:nth-child(1) li a.active {
+    color: rgb(var(--main-color));
+}
+
+nav ul.navbar-nav:nth-child(1) li:hover a:before,
+nav ul.navbar-nav:nth-child(1) li a.active:before {
+    right: 0;
+    opacity: 1;
+}
+
+nav ul.navbar-nav:nth-child(1) li:hover a:after,
+nav ul.navbar-nav:nth-child(1) li a.active:after {
+    left: 0;
+    opacity: 1;
+}
+
+nav ul.navbar-nav:nth-of-type(2) li {
+    font-size: 1.25rem;
+    transition: .5s;
+    cursor: pointer;
+}
+
+nav ul.navbar-nav:nth-of-type(2) li:hover {
+    color: rgb(var(--main-color));
+}
+
+/* #endregion */
+
+/* #region banner */
+section#landing {
+    margin-top: 75px;
+    height: calc(100vh - 75px);
+}
+
+section#landing .slider .slides .slide {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: none;
+}
+
+section#landing .slider .slides .slide.active {
+    display: grid;
+}
+
+section#landing .slider .slides .slide:nth-child(1) {
+    background-image: url(../images/home-bg-1-10109cb9.jpg);
+}
+
+section#landing .slider .slides .slide:nth-child(2) {
+    background-image: url(../images/home-bg-2-145b44b0.jpg);
+}
+
+section#landing .slider .slides .slide:nth-child(3) {
+    background-image: url(../images/home-bg-3-f6fde351.jpg);
+}
+
+section#landing .slider .slides .slide .item {
+    transition: 1s 1s;
+    transform: translateX(-150%);
+}
+
+section#landing .slider .slides .slide.show .item {
+    transform: translateX(0%);
+}
+
+section#landing .slider .slides .slide .item h2 {
+    color: rgb(var(--main-color));
+}
+
+section#landing .slider .slides .slide .item h3 {
+    color: rgb(var(--darkblue-color));
+}
+
+section#landing .slider .slides .slide .item button {
+    color: rgb(var(--main-color));
+    transition: 1s;
+    border: 1px solid rgb(var(--main-color));
+}
+
+section#landing .slider .slides .slide .item button:hover {
+    color: white;
+    background-color: rgb(var(--main-color));
+}
+
+section#landing .slider .slides .slide img:nth-child(1) {
+    transform: translate(-70px, -600px) scale(1.6);
+    opacity: 0;
+    transition: 1s .7s;
+}
+
+section#landing .slider .slides .slide.show img:nth-child(1) {
+    transform: translate(-70px, -20px) scale(1.6);
+    opacity: 1;
+}
+
+section#landing .slider .slides .slide img:nth-child(2) {
+    transform: translate(20px, -130px) scale(1) rotate(0deg);
+    opacity: 0;
+    transition: 1s;
+}
+section#landing .slider .slides .slide.show img:nth-child(2) {
+    transform: translate(20px, -130px) scale(2) rotate(-25deg);
+    opacity: 1;
+    transition: 1s;
+}
+
+section#landing .slider button.right,
+section#landing .slider button.left {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid rgb(var(--main-color));
+    display: grid;
+    place-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    transition: 1s;
+    color: rgb(var(--main-color));
+}
+
+section#landing .slider button:hover {
+    color: white;
+    background-color: rgb(var(--main-color));
+}
+
+section#landing .slider button.right {
+    right: 0;
+}
+
+section#landing .slider button.left {
+    left: 0;
+}
+
+/* #endregion banner */
+
+
+/* #region banner */
+#banner .row div img {
+    transform: scale(1);
+    transition: 1s;
+    cursor: pointer;
+}
+
+#banner .row div img:hover {
+    transform: scale(1.2);
+}
+
+#banner .row div::after {
+    content: "";
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgb(255, 255, 255, 0.5);
+    transform: translate(550px, 26px) rotate(45deg);
+    transition: 1s;
+}
+
+#banner .row div:hover::after {
+    transform: translate(-706px, 40px) rotate(45deg);
+}
+
+/* #endregion landing */
+
+/* #region latest */
+section#latest .item {
+    border: 2px solid rgb(var(--main-color));
+}
+
+section#latest .item>.text h2 {
+    color: rgb(var(--main-color));
+}
+
+section#latest .item .text p span:nth-child(2) {
+    color: rgb(var(--main-color));
+}
+
+section#latest .item .text ul li {
+    color: rgb(var(--main-color));
+    border: 1px solid rgb(var(--main-color));
+    width: 20px;
+    height: 20px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .5s;
+    font-size: initial;
+}
+
+section#latest .item .text ul li:hover,
+section#latest .item .text ul li.active {
+    color: white;
+    background-color: rgb(var(--main-color));
+}
+
+section#latest .item .text button[data-type="add"] {
+    border: 1px solid rgb(var(--main-color));
+    color: rgb(var(--main-color));
+    transition: .5s;
+}
+
+section#latest .item .text button[data-type="add"]:hover {
+    color: white;
+    background-color: rgb(var(--main-color));
+}
+
+section#latest .item .main-img {
+    overflow: hidden;
+}
+
+section#latest .item .main-img {
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section#latest .item .main-img img {
+    width: 60%;
+}
+
+section#latest .item .ul-imgs img {
+    border: 2px solid rgb(var(--main-color));
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* #endregion */
+
+/* #region features */
+
+section#features .row .card {
+    overflow: hidden;
+    transform-origin: 300px;
+}
+
+section#features .row .card>svg {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+    color: red;
+    transition: 3s;
+
+}
+
+section#features .row .card>svg.love {
+    animation: love .5s linear;
+}
+
+@keyframes love {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(18);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(36);
+    }
+}
+
+
+
+section#features .row .card .offer {
+    color: white;
+    background-color: rgb(var(--main-color));
+    position: absolute;
+    transform: rotate(45deg);
+    width: 100%;
+    top: 5%;
+    right: -38%;
+}
+
+section#features .row .card .head {
+    position: relative;
+    overflow: hidden;
+}
+
+section#features .row .card .head button:active,
+section#features .row .card .head button:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+section#features .row .card .head button {
+    width: 100%;
+    color: rgb(var(--main-color));
+    transform: translateY(70px);
+    opacity: 0;
+    transition: 1s;
+}
+
+section#features .row .card .head button span {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(var(--main-color));
+    border-radius: 100%;
+    margin: auto;
+    font-size: .85rem;
+    transition: .5s;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 15px;
+}
+
+section#features .row .card .head button span:hover {
+    color: white;
+    background-color: rgb(var(--main-color));
+}
+
+section#features .row .card .head .indicators {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+section#features .row .card .head .indicators .inner-indicators {
+    display: flex;
+    justify-content: center;
+}
+
+section#features .row .card .head .indicators .inner-indicators span {
+    width: 18px;
+    height: 18px;
+    display: block;
+    background-color: white;
+    border: 1px solid rgb(var(--main-color));
+    border-radius: 100%;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: transform 1s;
+    cursor: pointer;
+}
+
+section#features .row .card .head .indicators .inner-indicators span.active {
+    background-color: rgb(var(--main-color));
+}
+
+section#features .row .card .head .indicators .inner-indicators span:not(:last-child) {
+    margin-right: 5px;
+}
+
+section#features .row .card:hover .head .indicators button {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section#features .row .card:hover .head .indicators .inner-indicators span {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: .4s;
+}
+
+section#features .row .card .card-body .card-text span:first-child {
+    color: rgb(var(--main-color));
+}
+
+/* #endregion */
+
+/* #region loading */
+#loading {
+    display: none;
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    z-index: 99999999;
+}
+
+#loading.active {
+    display: flex;
+}
+
+#loading.show {
+    transition: 1s;
+    opacity: 0;
+}
+
+/* #endregion */
+
+/* #region popups */
+/* #region account*/
+section.popup {
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px);
+    display: none;
+    z-index: 99999;
+}
+
+section.popup .box {
+    background-color: rgb(var(--main-color), .2);
+    width: 400px;
+    transform: translateY(-200%);
+    opacity: 0;
+    transition: 1s;
+}
+
+section.popup#cart .box {
+    width: 80%;
+}
+section.popup#favorite .box {
+    width: 80%;
+}
+
+section.popup#cart .card img {
+    width: 200px;
+}
+section.popup#favorite .card img {
+    width: 200px;
+}
+
+section.popup#cart .card ul span.special {
+    color: rgb(var(--main-color));
+    font-weight: bold;
+}
+section.popup#favorite .card ul span.special {
+    color: rgb(var(--main-color));
+    font-weight: bold;
+}
+
+section.popup#cart .card ul span.color {
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    display: inline-block;
+    box-shadow: 0px 0px 5px 2px black;
+    margin-left: 5px;
+}
+section.popup#favorite .card ul span.color {
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    display: inline-block;
+    box-shadow: 0px 0px 5px 2px black;
+    margin-left: 5px;
+}
+
+section.popup#cart .card h5 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+section.popup#favorite .card h5 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+section.popup#product-info .box {
+    width: 80%;
+}
+
+section.popup#product-info .box .main-img {
+    width: 300px;
+}
+
+section.popup#product-info .box .ul-imgs div.col img {
+    width: 80px;
+}
+
+section.popup.active {
+    display: flex;
+}
+
+section.popup#cart.active {
+    display: block;
+}
+
+section.popup.active .box.show {
+    opacity: 1;
+    transform: initial;
+}
+
+section#product-info ul li {
+    color: rgb(var(--main-color));
+    border: 1px solid rgb(var(--main-color));
+    width: 20px;
+    height: 20px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .5s;
+    font-size: initial;
+}
+
+section#product-info ul.colors li {
+    padding: 0;
+    border-radius: 100%;
+}
+
+section#product-info ul.colors li.active {
+    box-shadow: 0px 0px 5px 2px black;
+}
+
+section#product-info ul li:hover,
+section#product-info ul li.active {
+    color: white;
+    background-color: rgb(var(--main-color));
+}
+
+section#product-info button[data-type="add"] {
+    border: 1px solid rgb(var(--main-color));
+    color: rgb(var(--main-color));
+    transition: .5s;
+}
+
+section#product-info button[data-type="add"]:hover {
+    color: white;
+    background-color: rgb(var(--main-color));
+}
+
+/* #endregion*/
+
+/* #endregion  */
