@@ -516,9 +516,10 @@ form.addEventListener("submit", function (event) {
     let searchWord = this.querySelector("input").value
     if (searchWord.length != 0) {
         let wantedProduct = Array.from(featuresSection.children).filter(function (item) {
-            let condition = item.children[0].children[2].firstElementChild.innerHTML.toLocaleLowerCase().trim().includes(searchWord.toLocaleLowerCase().trim());
+            let condition = item.children[0].children[3].firstElementChild.innerHTML.toLocaleLowerCase().trim().includes(searchWord.toLocaleLowerCase().trim());
             return condition;
         })
+        
         wantedProduct.forEach(function (card) {
             card.firstElementChild.classList.add("bg-success-subtle")
             setTimeout(function () {
@@ -540,6 +541,8 @@ form.addEventListener("submit", function (event) {
         document.querySelector("#formSearch button").click()
     }
 })
+
+
 
 window.onload = function () {
     let loading = document.querySelector("#loading")
